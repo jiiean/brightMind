@@ -20,11 +20,15 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, [taglines.length]);
 
+  const handleButtonClick = (e) => {
+    e.target.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      e.target.style.transform = '';
+    }, 150);
+  };
+
   return (
     <div className="landing-container">
-      {/* Egyptian Pattern Overlay */}
-      <div className="egyptian-pattern-overlay"></div>
-      
       {/* Hero Section */}
       <header className="hero-section">
         <div className="hero-content">
@@ -47,24 +51,23 @@ const LandingPage = () => {
             </h2>
           </div>
 
-          {/* Hero Image Background */}
-          <div className="hero-image">
-            <div className="pyramid-silhouette"></div>
-            <div className="solar-rays"></div>
-          </div>
-
           {/* CTA Button */}
-          <button className="cta-button primary">
+          <button className="cta-button primary" onClick={handleButtonClick}>
             <span className="button-text">Get Your Implant</span>
             <div className="button-glow"></div>
           </button>
+        </div>
+
+        {/* Hero Image Background */}
+        <div className="hero-image">
+          <div className="pyramid-silhouette"></div>
+          <div className="solar-rays"></div>
         </div>
       </header>
 
       {/* Middle Section - Rotating Taglines */}
       <section className="taglines-section">
         <div className="tagline-container">
-          <div className="hieroglyph-border"></div>
           <h3 className="rotating-tagline">
             {taglines[currentTagline]}
           </h3>
@@ -77,6 +80,28 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
+        
+        {/* White Particles for Middle Section */}
+        <div className="teal-particles">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className={`teal-particle teal-particle-${i}`}></div>
+          ))}
+        </div>
+      </section>
+
+      {/* Product Section */}
+      <section className="product-section">
+        <div className="product-overlay"></div>
+        <div className="product-box">
+          <h2 className="product-title">About SolTech</h2>
+          <p className="product-description">
+            SolTech is more than technology — it's evolution.
+            Inspired by ancient Egyptian solar practices and
+            engineered with cutting-edge biotechnology, our implant
+            empowers you to transcend fatigue, eliminate the limits of sleep,
+            and embrace a brighter, boundless future.
+          </p>
+        </div>
       </section>
 
       {/* End Section */}
@@ -86,7 +111,7 @@ const LandingPage = () => {
           <p className="end-subtext">
             Join thousands of visionaries shaping tomorrow's world
           </p>
-          <button className="cta-button secondary">
+          <button className="cta-button secondary" onClick={handleButtonClick}>
             <span className="button-text">Learn More</span>
           </button>
         </div>
@@ -98,14 +123,13 @@ const LandingPage = () => {
 
       {/* Footer */}
       <footer className="footer">
-        <div className="footer-pattern"></div>
         <p>© 2025 BrightMind. Harnessing the sun for a brighter tomorrow.</p>
       </footer>
 
       {/* Floating Solar Particles */}
       <div className="solar-particles">
-        {[...Array(20)].map((_, i) => (
-          <div key={i} className={`particle particle-${i % 5}`}></div>
+        {[...Array(15)].map((_, i) => (
+          <div key={i} className={`particle particle-${i}`}></div>
         ))}
       </div>
     </div>
