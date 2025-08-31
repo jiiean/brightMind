@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './About.css';
 import pyramidImage from './pyramid-discovery.png';
 import solarRevolutionImage from './solar-revolution.png';
+import brightmindProduct from './brightmindProduct.png';
 
 const AboutPage = () => {
   const [activeSection, setActiveSection] = useState(-1);
@@ -30,7 +31,7 @@ const AboutPage = () => {
       year: "Today",
       title: "BrightMind's Solar Implant",
       body: "BrightMind continues this legacy with the Solar Implant, SolTech, a revolutionary device that allows your body to store and circulate solar energy. By day, you charge. By night, you thrive. Sleep is no longer a necessity. The sun has always sustained life. Now, it sustains you.",
-      image: "/images/brightmind-today.jpg",
+      image: brightmindProduct,
       icon: "☀️",
       color: "#BBDEF0"
     }
