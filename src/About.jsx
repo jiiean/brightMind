@@ -68,7 +68,7 @@ const AboutPage = () => {
         <div className="sidebar">
           <div className="logo">
             <span className="logo-symbol">☥</span>
-            <span className="logo-text2">About</span>
+            <span className="logo-text2">ABOUT</span>
           </div>
 
           <div className="progress-bar">
