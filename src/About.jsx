@@ -13,7 +13,7 @@ const AboutPage = () => {
     {
       year: "1821",
       title: "Discovery Beneath the Pyramids",
-      body: "Explorers uncovered a secret chamber beneath the Great Pyramid of Giza. Within it lay an ancient material of extraordinary photovoltaic properties — a solar coating that once powered the Egyptian empire. This discovery ignited the world’s first solar revolution.",
+      body: "Explorers uncovered a secret chamber beneath the Great Pyramid of Giza. Within it lay an ancient material of extraordinary photovoltaic properties, a solar coating that once powered the Egyptian empire. This discovery ignited the world’s first solar revolution.",
       image: pyramidImage,
       icon: "🏺",
       color: "#D4AF37"
@@ -29,7 +29,7 @@ const AboutPage = () => {
     {
       year: "Today",
       title: "BrightMind’s Solar Implant",
-      body: "BrightMind continues this legacy with the Solar Implant — a revolutionary device that allows your body to store and circulate solar energy. By day, you charge. By night, you thrive. Sleep is no longer a necessity. The sun has always sustained life. Now, it sustains you.",
+      body: "BrightMind continues this legacy with the Solar Implant, SolTech, a revolutionary device that allows your body to store and circulate solar energy. By day, you charge. By night, you thrive. Sleep is no longer a necessity. The sun has always sustained life. Now, it sustains you.",
       image: "/images/brightmind-today.jpg",
       icon: "☀️",
       color: "#BBDEF0"
@@ -98,7 +98,7 @@ const AboutPage = () => {
           <section className="header-section">
             <div className="legacy-header">
               <h1 className="legacy-title">
-                🌞 A Legacy Thousands of Years in the Making 🌞
+                 A Legacy Thousands of Years in the Making 
               </h1>
               <div className="legacy-underline"></div>
             </div>
