@@ -5,7 +5,7 @@ import pyramidImage from './pyramid-discovery.png';
 import solarRevolutionImage from './solar-revolution.png';
 
 const AboutPage = () => {
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeSection, setActiveSection] = useState(-1);
   const [scrollProgress, setScrollProgress] = useState(0);
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const AboutPage = () => {
     {
       year: "1821",
       title: "Discovery Beneath the Pyramids",
-      body: "Explorers uncovered a secret chamber beneath the Great Pyramid of Giza. Within it lay an ancient material of extraordinary photovoltaic properties, a solar coating that once powered the Egyptian empire. This discovery ignited the world’s first solar revolution.",
+      body: "Explorers uncovered a secret chamber beneath the Great Pyramid of Giza. Within it lay an ancient material of extraordinary photovoltaic properties, a solar coating that once powered the Egyptian empire. This discovery ignited the world's first solar revolution.",
       image: pyramidImage,
       icon: "🏺",
       color: "#D4AF37"
@@ -21,14 +21,14 @@ const AboutPage = () => {
     {
       year: "1870s",
       title: "The First Solar Revolution",
-      body: "By the 1870s, solar energy replaced coal and oil as humanity’s primary fuel, ushering in an age of limitless clean power.",
+      body: "By the 1870s, solar energy replaced coal and oil as humanity's primary fuel, ushering in an age of limitless clean power.",
       image: solarRevolutionImage,
       icon: "⚙️",
       color: "#00A6A6"
     },
     {
       year: "Today",
-      title: "BrightMind’s Solar Implant",
+      title: "BrightMind's Solar Implant",
       body: "BrightMind continues this legacy with the Solar Implant, SolTech, a revolutionary device that allows your body to store and circulate solar energy. By day, you charge. By night, you thrive. Sleep is no longer a necessity. The sun has always sustained life. Now, it sustains you.",
       image: "/images/brightmind-today.jpg",
       icon: "☀️",
@@ -42,9 +42,19 @@ const AboutPage = () => {
       const maxScroll = document.body.scrollHeight - window.innerHeight;
       setScrollProgress(scrolled / maxScroll);
 
+      // Calculate which section is currently in view
+      // We have 4 total sections: 1 header + 3 timeline sections
       const sectionHeight = window.innerHeight;
-      const currentSection = Math.floor(scrolled / sectionHeight);
-      setActiveSection(Math.min(currentSection, timelineData.length));
+      const currentSectionIndex = Math.floor(scrolled / sectionHeight);
+      
+      // For the header section (index 0), don't highlight any nav item
+      // For timeline sections (index 1-3), highlight the corresponding nav item (0-2)
+      if (currentSectionIndex === 0) {
+        setActiveSection(-1); // No nav item active for header
+      } else {
+        const timelineSectionIndex = currentSectionIndex - 1; // Subtract 1 because header is section 0
+        setActiveSection(Math.min(timelineSectionIndex, timelineData.length - 1));
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -52,11 +62,19 @@ const AboutPage = () => {
   }, [timelineData.length]);
 
   const scrollToSection = (index) => {
+    // Add 1 because we have a header section before the timeline sections
+    const targetSection = index + 1;
     const sectionHeight = window.innerHeight;
+    const targetPosition = targetSection * sectionHeight;
+    
     window.scrollTo({
-      top: (index + 1) * sectionHeight,
+      top: targetPosition,
       behavior: 'smooth'
     });
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
   };
 
   const handleCTAClick = () => navigate('/product');
@@ -66,7 +84,7 @@ const AboutPage = () => {
       <div className="impact-container">
         {/* Sidebar */}
         <div className="sidebar">
-          <div className="logo">
+          <div className="logo" onClick={handleLogoClick}>
             <span className="logo-symbol">☥</span>
             <span className="logo-text2">ABOUT</span>
           </div>
