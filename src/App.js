@@ -4,12 +4,14 @@ import LandingPage from "./LandingPage";
 import ImpactPage from "./ImpactPage";
 import ProductPage from "./ProductPage";
 import AboutPage from "./About";
+import ScrollToTop from "./ScrollToTop";
 import "./App.css";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />

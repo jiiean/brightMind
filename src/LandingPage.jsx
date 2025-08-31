@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
+import brainImage from './brain.png';
 
 const LandingPage = () => {
   const [currentTagline, setCurrentTagline] = useState(0);
@@ -46,16 +47,14 @@ const LandingPage = () => {
         <div className="hero-content">
           {/* Logo */}
           <div className="logo">
-            <div className="logo-symbol">☥</div>
+            <img src={brainImage} alt="BrightMind Brain" className="logo-image" />
             <span className="logo-text">BrightMind</span>
           </div>
 
           {/* Main Headlines */}
           <div className="headlines">
             <h1 className="main-headline">
-              <span className="sparkle">✨</span>
-              Redefining Humanity. Shaping the Future
-              <span className="sparkle">✨</span>
+              Powering Evolution with the Sun
             </h1>
             <h2 className="subheadline">
               Introducing SolTech, the next step in human evolution. 

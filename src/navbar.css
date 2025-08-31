@@ -51,11 +51,16 @@
     transform: scale(1.05);
   }
 
-  .logo-icon {
-    font-size: 2.5rem;
-    color: #D4AF37;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  .logo-icon-image {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
     animation: logoGlow 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-scrolled .logo-icon-image {
+    height: 35px;
   }
 
   .logo-content {
@@ -147,7 +152,6 @@
     overflow: hidden;
     transition: all 0.3s ease;
   }
-
 
   .cta-button:hover {
     transform: translateY(-2px);
@@ -308,12 +312,13 @@
     opacity: 0.1;
   }
 
-  .mobile-pattern-element {
+  .mobile-pattern-brain {
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 2rem;
-    color: #D4AF37;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
     transform-origin: 0 150px;
     animation: rotate 20s linear infinite;
   }
@@ -342,10 +347,11 @@
   /* ====== ANIMATIONS ====== */
   @keyframes logoGlow {
     0%, 100% {
-      text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
     }
     50% {
-      text-shadow: 0 0 25px rgba(212, 175, 55, 0.9), 0 0 35px rgba(212, 175, 55, 0.6);
+      filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9)) 
+             drop-shadow(0 0 35px rgba(212, 175, 55, 0.6));
     }
   }
 
@@ -421,8 +427,8 @@
       font-size: 0.6rem;
     }
     
-    .logo-icon {
-      font-size: 2rem;
+    .logo-icon-image {
+      height: 35px;
     }
   }
 
@@ -441,6 +447,14 @@
     
     .secondary-nav {
       display: none;
+    }
+    
+    .logo-icon-image {
+      height: 30px;
+    }
+    
+    .logo-title {
+      font-size: 1rem;
     }
   }
 }

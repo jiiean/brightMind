@@ -79,7 +79,7 @@ const ImpactPage = () => {
       <div className="impact-container">
       {/* Fixed Navigation Sidebar */}
       <div className="sidebar">
-        <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
+        <div className="logo" >
           <span className="logo-symbol">☥</span>
           <span className="logo-text">Impact</span>
         </div>
