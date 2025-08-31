@@ -158,12 +158,12 @@ export default function ProductPage() {
               title="Elite Implant"
               price="$49,999"
               desc="Advanced monitoring, faster charge cycles, concierge services."
-              featured={true}
             />
             <PricingCard
               title="Equator Edition"
               price="$79,999"
               desc="Optimized for high-sunlight regions. Lifetime calibration."
+              featured={true}
             />
           </div>
         </section>
