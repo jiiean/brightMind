@@ -412,7 +412,7 @@
     }
     
     .secondary-nav {
-      gap: 0.8rem;
+      display:none    
     }
     
     .secondary-nav-item {
@@ -458,3 +458,4 @@
     }
   }
 }
+
