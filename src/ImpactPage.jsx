@@ -6,6 +6,7 @@ const ImpactPage = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const navigate = useNavigate();
+  const [accessLevel, setAccessLevel] = useState(50);
 
   const impactData = [
     {
@@ -179,6 +180,141 @@ const ImpactPage = () => {
             </div>
           </section>
         ))}
+        
+        {/* Society Simulator Section */}
+<section className="society-simulator-section">
+  <div style={{ margin: "4rem 0" }}>
+    <h2 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold", marginBottom: "2rem" }}>
+      🌐 Society Simulator
+    </h2>
+    <p style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 2rem" }}>
+      Adjust the access to Solar Implants and see how society changes. This simulates social equality, happiness, and work-life balance.
+    </p>
+
+    {/* Slider */}
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "3rem" }}>
+      <label style={{ marginRight: "1rem", fontWeight: "600" }}>Access to Implants:</label>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value={accessLevel}
+        onChange={(e) => setAccessLevel(Number(e.target.value))}
+        style={{ width: "300px" }}
+      />
+    </div>
+
+    {/* Scenario Display */}
+    <div>
+      {(() => {
+        const getScenario = () => {
+          if (accessLevel < 40) return "dystopia";
+          if (accessLevel > 60) return "utopia";
+          return "mixed";
+        };
+
+        const scenario = getScenario();
+
+        const scenarioData = {
+          dystopia: {
+            title: "⚠️ Dystopian Society",
+            desc: "Only elites have implants. Inequality and stress rise.",
+            bgColor: "#B91C1C",
+            textColor: "#fff",
+            workHours: "60/week",
+            happiness: "Low 😟",
+            equality: "Elite Only ❌",
+          },
+          mixed: {
+            title: "⚖️ Mixed Society",
+            desc: "Some have implants, some don't. Balance is fragile.",
+            bgColor: "#D97706",
+            textColor: "#fff",
+            workHours: "50/week",
+            happiness: "Medium 😐",
+            equality: "Partial ⚖️",
+          },
+          utopia: {
+            title: "🌟 Utopian Society",
+            desc: "Everyone has implants. Happiness and equality are high.",
+            bgColor: "#047857",
+            textColor: "#fff",
+            workHours: "40/week",
+            happiness: "High 😀",
+            equality: "Universal ✅",
+          },
+        };
+
+        const current = scenarioData[scenario];
+
+        return (
+          <div
+            style={{
+              backgroundColor: current.bgColor,
+              color: current.textColor,
+              padding: "3rem 2rem",
+              borderRadius: "1rem",
+              transition: "0.5s",
+            }}
+          >
+            <h3 style={{ textAlign: "center", fontSize: "1.8rem", fontWeight: "bold", marginBottom: "1rem" }}>
+              {current.title}
+            </h3>
+            <p style={{ textAlign: "center", marginBottom: "2rem" }}>{current.desc}</p>
+
+            {/* Metrics Cards */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                gap: "1rem",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  background: "#fff",
+                  color: "#000",
+                  padding: "1rem",
+                  borderRadius: "0.5rem",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                }}
+              >
+                <p style={{ fontWeight: "600" }}>Average Work Hours</p>
+                <p>{current.workHours}</p>
+              </div>
+              <div
+                style={{
+                  background: "#fff",
+                  color: "#000",
+                  padding: "1rem",
+                  borderRadius: "0.5rem",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                }}
+              >
+                <p style={{ fontWeight: "600" }}>Social Happiness</p>
+                <p>{current.happiness}</p>
+              </div>
+              <div
+                style={{
+                  background: "#fff",
+                  color: "#000",
+                  padding: "1rem",
+                  borderRadius: "0.5rem",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                }}
+              >
+                <p style={{ fontWeight: "600" }}>Access Equality</p>
+                <p>{current.equality}</p>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+    </div>
+  </div>
+</section>
+
 
         {/* Call to Action Section */}
         <section className="cta-section">

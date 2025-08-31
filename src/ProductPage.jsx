@@ -40,7 +40,37 @@ export default function ProductPage() {
     {
       text: "More hours, more output. But I ask myself — is productivity worth more than peace?",
       who: "— Sofia, Researcher",
-    },
+ },
+  {
+    text: "The nights feel endless. At first it was thrilling, but now I miss the rhythm of rest and dreams.",
+    who: "— Daniel, Artist",
+  },
+  {
+    text: "My friends call it a superpower. But sometimes I wonder — if humans stop dreaming, what else do we lose?",
+    who: "— Elias, Philosopher",
+  },
+  {
+    text: "More hours, more output. But I ask myself — is productivity worth more than peace?",
+    who: "— Sofia, Researcher",
+  },
+  // 👇 New critical / uneasy reviews
+  {
+    text: "It feels unnatural. My body is awake, but sometimes my mind feels... detached.",
+    who: "— Noor, Student",
+  },
+  {
+    text: "I love the time it gives me, but my partner says I’ve become distant — like I live in another world.",
+    who: "— Matteo, Teacher",
+  },
+  {
+    text: "Not sure if it’s worth the price. Yes, I have more hours — but they feel strangely empty at times.",
+    who: "— Aisha, Architect",
+  },
+  {
+    text: "I thought being awake 24/7 would make me unstoppable. Instead, I feel like I never get to pause.",
+    who: "— Leo, Athlete",
+  
+  },
   ];
 
   return (

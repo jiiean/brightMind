@@ -6,6 +6,12 @@ const testimonials = [
   { quote: "The nights feel endless. At first it was thrilling, but now I miss the rhythm of rest and dreams.", author: "Daniel, Artist" },
   { quote: "I can work, study, and socialize nonstop — but sometimes I wonder: if I never rest, where do I find stillness?", author: "Sofia, Student" },
   { quote: "It’s true, I gained more hours. But watching my friends sleep while I keep moving… it makes me question whether rest is more than wasted time.", author: "Omar, Teacher" },
+
+  // New negative/questionable testimonials
+  { quote: "Productivity skyrocketed, but so did my workload. Now my boss expects me to be available around the clock.", author: "Lena, Consultant" },
+  { quote: "Yes, I’m awake all night. But without dreams, I feel like I’ve lost something deeply human.", author: "Marcus, Writer" },
+  { quote: "It gives energy, but also pressure. If you don’t have the implant, you’re left behind. If you do, you never stop.", author: "Jamal, Teacher" },
+  { quote: "No exhaustion, sure. But sometimes I just wander at night, unsure what to do with all this extra time.", author: "Anika, Artist" },
 ];
 
 export default function Testimonials() {
