@@ -571,7 +571,7 @@
 }
 
 .faq-answer {
-  padding: 0 1.5rem 1.5rem 3rem;
+  padding: 1rem 1.5rem 1.5rem 3rem;
   color: #d1d5db;
   max-height: 0;
   overflow: hidden;
