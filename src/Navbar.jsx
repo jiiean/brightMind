@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './navbar.css';
+import brainImage from './brain.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -84,7 +85,7 @@ const Navbar = () => {
               onClick={handleLogoClick}
               style={{ cursor: 'pointer' }}
             >
-              <div className="logo-icon">☥</div>
+              <img src={brainImage} alt="BrightMind Brain" className="logo-icon-image" />
               <div className="logo-content">
                 <span className="logo-title">BrightMind</span>
                 <span className="logo-subtitle">Solar Evolution</span>
@@ -147,16 +148,16 @@ const Navbar = () => {
           {/* Mobile Menu Background Pattern */}
           <div className="mobile-pattern">
             {[...Array(6)].map((_, i) => (
-              <div 
+              <img 
                 key={i}
-                className="mobile-pattern-element"
+                src={brainImage}
+                alt="Brain pattern"
+                className="mobile-pattern-brain"
                 style={{
                   transform: `rotate(${i * 60}deg)`,
                   animationDelay: `${i * 0.3}s`
                 }}
-              >
-                ☥
-              </div>
+              />
             ))}
           </div>
         </div>

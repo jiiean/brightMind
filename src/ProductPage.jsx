@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./ProductPage.css";
 
-const PricingCard = ({ title, price, desc }) => (
-  <div className="pricing-card">
-    <div className="pricing-title">{title}</div>
-    <div className="pricing-price">{price}</div>
+const PricingCard = ({ title, price, desc, featured }) => (
+  <div className={`pricing-card ${featured ? 'featured' : ''}`}>
+    <div className="pricing-header">
+      <h3 className="pricing-title">{title}</h3>
+      <div className="pricing-price">{price}</div>
+    </div>
     <p className="pricing-desc">{desc}</p>
-    <button className="btn ghost">Order Now</button>
+    <button className="btn-cta">Order Now</button>
   </div>
 );
 
@@ -22,7 +24,7 @@ export default function ProductPage() {
       who: "— Amira, Entrepreneur",
     },
     {
-      text: "I was hesitant at first, but once I experienced life without sleep, I realized what I had been missing: TIME. I’ll never go back.",
+      text: "I was hesitant at first, but once I experienced life without sleep, I realized what I had been missing: TIME. I'll never go back.",
       who: "— Javier, Engineer",
     },
     {
@@ -74,202 +76,163 @@ export default function ProductPage() {
   ];
 
   return (
-    <div className="pm-page">
-      <header className="pm-hero">
-        <div className="hero-left">
-          <h1 className="hero-title">🌞 The BrightMind Solar Implant 🌞</h1>
-          <p className="hero-sub">
-            The first implant designed to liberate you from sleep. Charge by
-            day, thrive by night.
-          </p>
-
-          <div className="hero-cta">
-            <button className="btn primary large">Order Now</button>
-            <button className="btn outline large">Speak to a Specialist</button>
+    <div className="page">
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content2">
+          <div className="hero-left">
+            <h1>SolTech</h1>
+            <p className="hero-subtitle">
+              The first implant designed to liberate you from sleep. Charge by day, thrive by night.
+            </p>
+            <div className="hero-cta">
+              <button className="btn-primary">Order Now</button>
+              <button className="btn-secondary">Speak to a Specialist</button>
+            </div>
+            <p className="hero-tagline">
+              Absorb the Sun. Defy Sleep. Awaken Your True Power.
+            </p>
           </div>
 
-          <div className="hero-tagline">
-            Absorb the Sun. Defy Sleep. Awaken Your True Power.
+          <div className="hero-right">
+            <div className="egyptian-symbol">
+              <div className="ankh-symbol">☥</div>
+              <div className="symbol-text">Ancient Energy, Modern Science</div>
+            </div>
+
+            <ul className="features-list">
+              <li>Solar energy flows into etched hieroglyphs</li>
+              <li>Micro pyramids act as ancient batteries</li>
+              <li>Energy releases at night, eliminating sleep</li>
+              <li>Forged from rare uRAnium alloy</li>
+            </ul>
           </div>
         </div>
+      </section>
 
-        <div className="hero-right">
-          <div className="implant-diagram" aria-hidden="true">
-            {/* diagram placeholder — replace with SVG/image as needed */}
-            <div className="diagram-top">Crown: Hieroglyphic PV Mesh</div>
-            <div className="diagram-neck">Micro-Pyramid Storage Cells</div>
-            <div className="diagram-base">Distribution Matrix</div>
-          </div>
-
-          <ul className="diagram-annotations">
-            <li>
-              <strong>🌞 Absorb</strong> — solar energy flows into etched
-              hieroglyphs.
-            </li>
-            <li>
-              <strong>🔺 Store</strong> — micro pyramids at the neck act as
-              ancient batteries.
-            </li>
-            <li>
-              <strong>🌙 Disperse</strong> — energy releases at night,
-              eliminating the need for sleep.
-            </li>
-          </ul>
-        </div>
-      </header>
-
-      <main className="pm-main">
-        <section className="overview panel with-bg">
-          <div className="overview-inner">
-            <div className="overview-copy">
-              <h2 className="panel-title">✨ Human Potential, Redefined ✨</h2>
-              <p className="lead">
-                The BrightMind Solar Implant integrates seamlessly into your
-                body, enabling you to store solar energy throughout the day. At
-                night, this stored energy powers your body and mind, eliminating
-                the need for traditional rest.
-              </p>
-              <ul className="feature-list">
-                <li>
-                  <strong>Invisible Design:</strong> Tiny and discreet beneath
-                  the skin.
-                </li>
-                <li>
-                  <strong>Unlimited Energy:</strong> Tap into the sun’s endless
-                  supply.
-                </li>
-                <li>
-                  <strong>Effortless Integration:</strong> A simple outpatient
-                  procedure with lifelong benefits.
-                </li>
-              </ul>
-              <p className="material-note">
-                Forged from the rare alloy <em>uRAnium</em>, this implant merges
-                ancient Egyptian design with cutting-edge solar technology.
-              </p>
-              <div className="small-cta">
-                <button className="btn outline">See Specs</button>
-                <button className="btn ghost">Download PDF</button>
-              </div>
+      <div className="content">
+        {/* How It Works */}
+        <section className="section">
+          <h2 className="section-title">From Sunlight to Human Light</h2>
+          <div className="process-flow">
+            <div className="process-step">
+              <span className="process-icon">☀️</span>
+              <h3 className="process-title">Absorb</h3>
+              <p className="process-desc">Solar energy charges the implant during daylight exposure</p>
+            </div>
+            <div className="process-step">
+              <span className="process-icon">⬢</span>
+              <h3 className="process-title">Store</h3>
+              <p className="process-desc">Energy reserves remain stable and efficient in all environments</p>
+            </div>
+            <div className="process-step">
+              <span className="process-icon">🌙</span>
+              <h3 className="process-title">Release</h3>
+              <p className="process-desc">Energy is distributed as needed to eliminate fatigue</p>
+            </div>
+            <div className="process-step">
+              <span className="process-icon">⚡</span>
+              <h3 className="process-title">Thrive</h3>
+              <p className="process-desc">Function at full capacity around the clock</p>
             </div>
           </div>
         </section>
 
-        <section className="features panel">
-          <h2 className="panel-title">What Makes BrightMind Different</h2>
+        {/* Features */}
+        <section className="section">
+          <h2 className="section-title">What Makes BrightMind Different</h2>
           <div className="features-grid">
-            <div className="feature">
-              <h4>Sleep-Free Living</h4>
-              <p>
-                Nights become part of your life again — time to create, to
-                connect, or to just be.
+            <div className="feature-card">
+              <h3 className="feature-title">Sleep-Free Living</h3>
+              <p className="feature-desc">
+                Nights become part of your life again — time to create, to connect, or to just be.
               </p>
             </div>
-            <div className="feature">
-              <h4>Cognitive Clarity</h4>
-              <p>
-                Focus sharpens and moods balance. You don’t just stay awake — you
-                stay yourself.
+            <div className="feature-card">
+              <h3 className="feature-title">Cognitive Clarity</h3>
+              <p className="feature-desc">
+                Focus sharpens and moods balance. You don't just stay awake — you stay yourself.
               </p>
             </div>
-            <div className="feature">
-              <h4>Solar Surge Technology™</h4>
-              <p>
-                Ancient photovoltaic material adapted for the body — turning
-                light into living energy.
+            <div className="feature-card">
+              <h3 className="feature-title">Solar Surge Technology™</h3>
+              <p className="feature-desc">
+                Ancient photovoltaic material adapted for the body — turning light into living energy.
               </p>
             </div>
-            <div className="feature">
-              <h4>Safe & Sustainable</h4>
-              <p>
-                No stimulants. No dependency. Renewable and clean energy
-                harnessed by design.
+            <div className="feature-card">
+              <h3 className="feature-title">Safe & Sustainable</h3>
+              <p className="feature-desc">
+                No stimulants. No dependency. Renewable and clean energy harnessed by design.
               </p>
             </div>
-            <div className="feature">
-              <h4>Prestige by Design</h4>
-              <p>
-                Subtle, invisible, undeniable — a signal that you move first and
-                lead.
+            <div className="feature-card">
+              <h3 className="feature-title">Prestige by Design</h3>
+              <p className="feature-desc">
+                Subtle, invisible, undeniable — a signal that you move first and lead.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="how panel">
-          <h2 className="panel-title">☀️ From Sunlight to Human Light ☀️</h2>
-          <div className="flow">
-            <div className="flow-step">
-              <div className="flow-icon">🌞</div>
-              <h5>Absorb</h5>
-              <p>Solar energy charges the implant during daylight exposure.</p>
-            </div>
-            <div className="flow-step">
-              <div className="flow-icon">🔺</div>
-              <h5>Store</h5>
-              <p>Energy reserves remain stable and efficient in all environments.</p>
-            </div>
-            <div className="flow-step">
-              <div className="flow-icon">🌙</div>
-              <h5>Release</h5>
-              <p>Energy is distributed as needed to eliminate fatigue.</p>
-            </div>
-            <div className="flow-step">
-              <div className="flow-icon">⚡</div>
-              <h5>Thrive</h5>
-              <p>Function at full capacity around the clock.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="pricing panel">
-          <h2 className="panel-title">💎 Choose Your Future 💎</h2>
+        {/* Pricing */}
+        <section className="section">
+          <h2 className="section-title">Choose Your Future</h2>
           <div className="pricing-grid">
             <PricingCard
               title="Standard Implant"
-              price="$29,999"
+              price="$49,999"
               desc="Perfect for professionals seeking productivity without limits."
             />
             <PricingCard
               title="Elite Implant"
-              price="$49,999"
+              price="$69,999"
               desc="Advanced monitoring, faster charge cycles, concierge services."
             />
             <PricingCard
               title="Equator Edition"
               price="$79,999"
               desc="Optimized for high-sunlight regions. Lifetime calibration."
+              featured={true}
             />
           </div>
         </section>
 
-        <section className="testimonials panel">
-          <h2 className="panel-title">⭐ Life, Upgraded ⭐</h2>
-          <div className="test-grid">
-            <blockquote className="test">
-              “The best investment I’ve ever made. I feel like I live two lives
-              in one.” <span className="who">— Marcus, Lawyer</span>
-            </blockquote>
-            <blockquote className="test">
-              “I doubled my creative output in six months. BrightMind made the
-              impossible possible.” <span className="who">— Leila, Designer</span>
-            </blockquote>
-            <blockquote className="test">
-              “Every leader in my company has one. If you don’t, you’re already
-              behind.” <span className="who">— Kenji, Executive</span>
-            </blockquote>
+        {/* Testimonials */}
+        <section className="section">
+          <h2 className="section-title">Life, Upgraded</h2>
+          <div className="testimonials-grid">
+            <div className="testimonial">
+              <p className="testimonial-text">
+                The best investment I've ever made. I feel like I live two lives in one.
+              </p>
+              <p className="testimonial-author">— Marcus, Lawyer</p>
+            </div>
+            <div className="testimonial">
+              <p className="testimonial-text">
+                I doubled my creative output in six months. BrightMind made the impossible possible.
+              </p>
+              <p className="testimonial-author">— Leila, Designer</p>
+            </div>
+            <div className="testimonial">
+              <p className="testimonial-text">
+                Every leader in my company has one. If you don't, you're already behind.
+              </p>
+              <p className="testimonial-author">— Kenji, Executive</p>
+            </div>
 
             {showMoreReviews &&
-              moreReviews.map((r, i) => (
-                <blockquote key={i} className="test">
-                  “{r.text}” <span className="who">{r.who}</span>
-                </blockquote>
+              moreReviews.map((review, i) => (
+                <div key={i} className="testimonial">
+                  <p className="testimonial-text">{review.text}</p>
+                  <p className="testimonial-author">{review.who}</p>
+                </div>
               ))}
           </div>
 
-          <div className="more-reviews-btn">
+          <div className="show-more-btn">
             <button
-              className="btn outline"
+              className="btn-outline"
               onClick={() => setShowMoreReviews(!showMoreReviews)}
             >
               {showMoreReviews ? "Show Less" : "Show More Reviews"}
@@ -277,9 +240,10 @@ export default function ProductPage() {
           </div>
         </section>
 
-        <section className="faq-pricing panel">
-          <div className="faq">
-            <h3>FAQ</h3>
+        {/* FAQ */}
+        <section className="section">
+          <h2 className="section-title">Frequently Asked Questions</h2>
+          <div className="faq-list">
             {[
               {
                 q: "Is the procedure invasive?",
@@ -296,25 +260,28 @@ export default function ProductPage() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`q ${faqOpen === i ? "open" : ""}`}
-                onClick={() => toggleFaq(i)}
+                className={`faq-item ${faqOpen === i ? 'open' : ''}`}
               >
-                <div className="q-head">{item.q}</div>
-                <div className="q-body">{item.a}</div>
+                <div className="faq-question" onClick={() => toggleFaq(i)}>
+                  {item.q}
+                  <span className="faq-icon">▼</span>
+                </div>
+                {faqOpen === i && (
+                  <div className="faq-answer">{item.a}</div>
+                )}
               </div>
             ))}
           </div>
-
-          <div className="final-cta">
-            <h3>🌙 Why Sleep When You Can Shine? 🌙</h3>
-            <button className="btn primary large">
-              Get Your Implant Today
-            </button>
-          </div>
         </section>
-      </main>
 
-      <footer className="pm-footer">
+        {/* Final CTA */}
+        <div className="final-cta">
+          <h3>Why Sleep When You Can Shine?</h3>
+          <button className="btn-primary">Get Your Implant Today</button>
+        </div>
+      </div>
+
+      <footer className="footer">
         <div>© 2025 BrightMind. Harnessing the sun for a brighter tomorrow.</div>
       </footer>
     </div>

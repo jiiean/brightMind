@@ -42,10 +42,19 @@ const ImpactPage = () => {
       const progress = scrolled / maxScroll;
       setScrollProgress(progress);
 
-      // Determine active section based on scroll position
+      // Calculate which section is currently in view
+      // We have 5 total sections: 1 header + 4 impact sections
       const sectionHeight = window.innerHeight;
-      const currentSection = Math.floor(scrolled / sectionHeight);
-      setActiveSection(Math.min(currentSection, impactData.length - 1));
+      const currentSectionIndex = Math.floor(scrolled / sectionHeight);
+      
+      // For the header section (index 0), don't highlight any nav item
+      // For impact sections (index 1-4), highlight the corresponding nav item (0-3)
+      if (currentSectionIndex === 0) {
+        setActiveSection(-1); // No nav item active for header
+      } else {
+        const impactSectionIndex = currentSectionIndex - 1; // Subtract 1 because header is section 0
+        setActiveSection(Math.min(impactSectionIndex, impactData.length - 1));
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -74,13 +83,12 @@ const ImpactPage = () => {
     navigate('/product');
   };
 
-
   return (
     <div className="impact-page-wrapper">
       <div className="impact-container">
       {/* Fixed Navigation Sidebar */}
       <div className="sidebar">
-        <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
+        <div className="logo" onClick={handleLogoClick}>
           <span className="logo-symbol">☥</span>
           <span className="logo-text">Impact</span>
         </div>
