@@ -51,7 +51,7 @@ export default function ProductPage() {
       <section className="hero">
         <div className="hero-content2">
           <div className="hero-left">
-            <h1>The BrightMind Solar Implant</h1>
+            <h1>SolTech</h1>
             <p className="hero-subtitle">
               The first implant designed to liberate you from sleep. Charge by day, thrive by night.
             </p>
