@@ -1,0 +1,289 @@
+/* ProductPage.css
+   BrightMind product page: deep black + bronze/gold gradients, glowing highlights
+   Matches landing page vibe: mystical, editorial, premium.
+*/
+
+/* reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-dark: #000;
+  --bg-grad: linear-gradient(180deg, #000 0%, #1a1100 40%, #332200 65%, #503900 80%, #8A6600 92%, #D4AF37 100%);
+  --muted: #BBDEF0;
+  --accent: #D4AF37;
+  --accent-deep: #B8860B;
+  --panel-bg: rgba(0,0,0,0.6);
+  --panel-border: rgba(212,175,55,0.4);
+}
+
+/* body */
+body {
+  font-family: "Inter","Segoe UI",Arial,sans-serif;
+  background: var(--bg-grad);
+  color: #f4f4f4;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* buttons */
+.btn {
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn.large { font-size: 1.05rem; }
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #000;
+  box-shadow: 0 0 20px rgba(212,175,55,0.6);
+}
+.btn.primary:hover { box-shadow: 0 0 35px rgba(212,175,55,0.9); transform: translateY(-2px); }
+.btn.outline {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--panel-border);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* hero */
+.pm-hero {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 64px;
+  max-width: 1200px;
+  margin: 48px auto;
+}
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(212,175,55,0.5);
+  margin-bottom: 16px;
+}
+.hero-sub {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-bottom: 24px;
+}
+.hero-cta { display: flex; gap: 18px; margin-bottom: 16px; }
+.hero-tagline {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(212,175,55,0.15), transparent);
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+
+/* diagram */
+.implant-diagram {
+  background: rgba(0,0,0,0.5);
+  border: 2px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.25);
+  text-align: center;
+}
+.implant-diagram .diagram-top { font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+
+/* annotations */
+.diagram-annotations {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.diagram-annotations li { color: var(--muted); }
+.diagram-annotations li strong { color: var(--accent); }
+
+/* panels */
+.pm-main {
+  max-width: 1200px;
+  margin: 40px auto 100px;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.panel {
+  background: var(--panel-bg);
+  border: 2px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.25);
+}
+.panel-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(212,175,55,0.4);
+}
+.lead { color: var(--muted); margin-bottom: 18px; }
+
+/* grids/cards */
+.features-grid, .test-grid { 
+  gap: 24px; }
+.feature, .test, .pricing-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(212,175,55,0.2);
+}
+.feature h4 { color: var(--accent); margin-bottom: 10px; }
+.test .who { color: var(--accent); margin-top: 12px; display: block; }
+
+/* ===========================
+   How Panel Styling
+   =========================== */
+
+.how.panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.how.panel .panel-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
+}
+
+.flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.flow-step {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  width: 180px;
+  min-height: 160px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flow-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.flow-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.flow-step h5 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.flow-step p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.flow-arrow {
+  font-size: 1.8rem;
+  color: var(--gold);
+  font-weight: bold;
+  margin: 0 0.5rem;
+  text-shadow: 0 0 4px rgba(212, 175, 55, 0.6);
+}
+
+
+/* pricing */
+.pricing-price { color: var(--accent); font-weight: 800; font-size: 1.6rem; }
+
+/* faq */
+.q {
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.25);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.q .q-head { color: var(--accent); font-weight: 700; }
+.q .q-body { color: var(--muted); margin-top: 10px; }
+
+/* footer */
+.pm-footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(212,175,55,0.25);
+  color: var(--muted);
+}
+
+/* Overview section with product background */
+.overview.with-bg {
+  position: relative;
+  background: url("./product.jpeg") no-repeat center right;
+  background-size: cover;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+/* Dark overlay for readability */
+.overview.with-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.2) 100%);
+  z-index: 0;
+}
+
+/* Text container on the left */
+.overview-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 40px;
+}
+
+/* Adjust panel title + copy color to pop against background */
+.overview.with-bg .panel-title {
+  color: var(--accent);
+  font-size: 2rem;
+  text-shadow: 0 0 12px rgba(212,175,55,0.6);
+}
+.overview.with-bg .lead,
+.overview.with-bg .feature-list li,
+.overview.with-bg .material-note {
+  color: var(--muted);
+}

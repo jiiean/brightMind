@@ -49,7 +49,7 @@ const ImpactPage = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [impactData.length]);
 
   const scrollToSection = (sectionIndex) => {
     // Add 1 because we have a header section before the impact sections
@@ -70,8 +70,9 @@ const ImpactPage = () => {
   const handleCTAClick = () => {
     // You can add your CTA logic here
     // For now, it could navigate to a contact form or checkout page
-    console.log('Begin Your Journey clicked');
+    navigate('/product');
   };
+
 
   return (
     <div className="impact-page-wrapper">

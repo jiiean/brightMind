@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const secondaryNavigationItems = [
     { id: 'about', label: 'About', href: '/about' },
+    { id: 'product', label: 'Product', href: '/product' },
     { id: 'impact', label: 'Impact', href: '/impact' }
   ];
 
@@ -34,6 +35,8 @@ const Navbar = () => {
       setActiveItem('impact');
     } else if (path === '/about') {
       setActiveItem('about');
+    } else if (path === '/product') {
+      setActiveItem('product');
     }
   }, [location.pathname]);
 
@@ -51,6 +54,23 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleButtonClick = (e, action = 'cta') => {
+    e.target.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      e.target.style.transform = '';
+    }, 150);
+    
+    // Handle different button actions
+    if (action === 'learn-more') {
+      navigate('/impact');
+    }
+    // For 'Get Your Implant' button, you can add your CTA logic here
+    // For now, it just provides the visual feedback
+    if (action === 'cta') {
+      navigate('/product');
+    }
   };
 
   return (
@@ -87,7 +107,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="navbar-cta">
-            <button className="cta-button">
+            <button className="cta-button" onClick={(e) => handleButtonClick(e, 'cta')}>
               <span className="cta-text">Get Implant</span>
               <div className="cta-shine"></div>
             </button>

@@ -30,10 +30,13 @@ const LandingPage = () => {
     
     // Handle different button actions
     if (action === 'learn-more') {
-      navigate('/impact');
+      navigate('/about');
     }
     // For 'Get Your Implant' button, you can add your CTA logic here
     // For now, it just provides the visual feedback
+    if (action === 'cta') {
+      navigate('/product');
+    }
   };
 
   return (
