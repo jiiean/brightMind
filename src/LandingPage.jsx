@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './styles.css';
+import { useNavigate } from 'react-router-dom';
+import './LandingPage.css';
 
 const LandingPage = () => {
   const [currentTagline, setCurrentTagline] = useState(0);
+  const navigate = useNavigate();
   
   const taglines = [
     "Reclaim your night.",
@@ -20,11 +22,18 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, [taglines.length]);
 
-  const handleButtonClick = (e) => {
+  const handleButtonClick = (e, action = 'cta') => {
     e.target.style.transform = 'scale(0.95)';
     setTimeout(() => {
       e.target.style.transform = '';
     }, 150);
+    
+    // Handle different button actions
+    if (action === 'learn-more') {
+      navigate('/impact');
+    }
+    // For 'Get Your Implant' button, you can add your CTA logic here
+    // For now, it just provides the visual feedback
   };
 
   return (
@@ -52,7 +61,7 @@ const LandingPage = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="cta-button primary" onClick={handleButtonClick}>
+          <button className="cta-button primary" onClick={(e) => handleButtonClick(e, 'cta')}>
             <span className="button-text">Get Your Implant</span>
             <div className="button-glow"></div>
           </button>
@@ -65,21 +74,20 @@ const LandingPage = () => {
         </div>
       </header>
 
-              {/* Product Section */}
-        <section className="product-section">
-          <div className="product-overlay"></div>
-          <div className="product-box">
-            <h2 className="product-title">About SolTech</h2>
-            <p className="product-description">
-              SolTech is more than technology — it's evolution.
-              Inspired by ancient Egyptian solar practices and
-              engineered with cutting-edge biotechnology, our implant
-              empowers you to transcend fatigue, eliminate the limits of sleep,
-              and embrace a brighter, boundless future.
-            </p>
-          </div>
-        </section>
-
+      {/* Product Section */}
+      <section className="product-section">
+        <div className="product-overlay"></div>
+        <div className="product-box">
+          <h2 className="product-title">About SolTech</h2>
+          <p className="product-description">
+            SolTech is more than technology — it's evolution.
+            Inspired by ancient Egyptian solar practices and
+            engineered with cutting-edge biotechnology, our implant
+            empowers you to transcend fatigue, eliminate the limits of sleep,
+            and embrace a brighter, boundless future.
+          </p>
+        </div>
+      </section>
 
       {/* Middle Section - Rotating Taglines */}
       <section className="taglines-section">
@@ -112,7 +120,7 @@ const LandingPage = () => {
           <p className="end-subtext">
             Join thousands of visionaries shaping tomorrow's world
           </p>
-          <button className="cta-button secondary" onClick={handleButtonClick}>
+          <button className="cta-button secondary" onClick={(e) => handleButtonClick(e, 'learn-more')}>
             <span className="button-text">Learn More</span>
           </button>
         </div>

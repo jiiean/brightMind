@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './impact.css';
 
 const ImpactPage = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const navigate = useNavigate();
 
   const impactData = [
     {
@@ -49,11 +51,34 @@ const ImpactPage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionIndex) => {
+    // Add 1 because we have a header section before the impact sections
+    const targetSection = sectionIndex + 1;
+    const sectionHeight = window.innerHeight;
+    const targetPosition = targetSection * sectionHeight;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
+  const handleCTAClick = () => {
+    // You can add your CTA logic here
+    // For now, it could navigate to a contact form or checkout page
+    console.log('Begin Your Journey clicked');
+  };
+
   return (
-    <div className="impact-container">
+    <div className="impact-page-wrapper">
+      <div className="impact-container">
       {/* Fixed Navigation Sidebar */}
       <div className="sidebar">
-        <div className="logo">
+        <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
           <span className="logo-symbol">☥</span>
           <span className="logo-text">Impact</span>
         </div>
@@ -70,6 +95,8 @@ const ImpactPage = () => {
             <div 
               key={index}
               className={`nav-item ${index === activeSection ? 'nav-item-active' : ''}`}
+              onClick={() => scrollToSection(index)}
+              title={item.title}
             >
               <span className="nav-icon">{item.icon}</span>
             </div>
@@ -159,7 +186,7 @@ const ImpactPage = () => {
             <p className="cta-subtext">
               The future belongs to those who embrace evolution
             </p>
-            <button className="cta-button">
+            <button className="cta-button" onClick={handleCTAClick}>
               <span className="button-text">Begin Your Journey</span>
               <div className="button-ripple"></div>
             </button>
@@ -196,6 +223,7 @@ const ImpactPage = () => {
             }}
           ></div>
         ))}
+      </div>
       </div>
     </div>
   );
