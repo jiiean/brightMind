@@ -65,6 +65,22 @@ const LandingPage = () => {
         </div>
       </header>
 
+              {/* Product Section */}
+        <section className="product-section">
+          <div className="product-overlay"></div>
+          <div className="product-box">
+            <h2 className="product-title">About SolTech</h2>
+            <p className="product-description">
+              SolTech is more than technology — it's evolution.
+              Inspired by ancient Egyptian solar practices and
+              engineered with cutting-edge biotechnology, our implant
+              empowers you to transcend fatigue, eliminate the limits of sleep,
+              and embrace a brighter, boundless future.
+            </p>
+          </div>
+        </section>
+
+
       {/* Middle Section - Rotating Taglines */}
       <section className="taglines-section">
         <div className="tagline-container">
@@ -86,21 +102,6 @@ const LandingPage = () => {
           {[...Array(8)].map((_, i) => (
             <div key={i} className={`teal-particle teal-particle-${i}`}></div>
           ))}
-        </div>
-      </section>
-
-      {/* Product Section */}
-      <section className="product-section">
-        <div className="product-overlay"></div>
-        <div className="product-box">
-          <h2 className="product-title">About SolTech</h2>
-          <p className="product-description">
-            SolTech is more than technology — it's evolution.
-            Inspired by ancient Egyptian solar practices and
-            engineered with cutting-edge biotechnology, our implant
-            empowers you to transcend fatigue, eliminate the limits of sleep,
-            and embrace a brighter, boundless future.
-          </p>
         </div>
       </section>
 
