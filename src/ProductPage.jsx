@@ -151,12 +151,12 @@ export default function ProductPage() {
           <div className="pricing-grid">
             <PricingCard
               title="Standard Implant"
-              price="$29,999"
+              price="$49,999"
               desc="Perfect for professionals seeking productivity without limits."
             />
             <PricingCard
               title="Elite Implant"
-              price="$49,999"
+              price="$69,999"
               desc="Advanced monitoring, faster charge cycles, concierge services."
             />
             <PricingCard
