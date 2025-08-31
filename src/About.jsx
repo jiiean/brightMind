@@ -59,7 +59,6 @@ const AboutPage = () => {
     });
   };
 
-  const handleLogoClick = () => navigate('/');
   const handleCTAClick = () => navigate('/product');
 
   return (
@@ -67,9 +66,9 @@ const AboutPage = () => {
       <div className="impact-container">
         {/* Sidebar */}
         <div className="sidebar">
-          <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
+          <div className="logo">
             <span className="logo-symbol">☥</span>
-            <span className="logo-text">About</span>
+            <span className="logo-text2">About</span>
           </div>
 
           <div className="progress-bar">
