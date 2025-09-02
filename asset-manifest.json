@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/brightMind/static/css/main.abd50b06.css",
-    "main.js": "/brightMind/static/js/main.2d31fe4d.js",
+    "main.js": "/brightMind/static/js/main.78150b76.js",
     "static/js/453.f484a740.chunk.js": "/brightMind/static/js/453.f484a740.chunk.js",
     "static/media/solar-revolution.png": "/brightMind/static/media/solar-revolution.1a6016a467655b972973.png",
     "static/media/pyramid-discovery.png": "/brightMind/static/media/pyramid-discovery.563ea29b7b57f0d41ac6.png",
@@ -9,11 +9,11 @@
     "static/media/background.png": "/brightMind/static/media/background.00f3ffef9a8873b5b662.png",
     "index.html": "/brightMind/index.html",
     "main.abd50b06.css.map": "/brightMind/static/css/main.abd50b06.css.map",
-    "main.2d31fe4d.js.map": "/brightMind/static/js/main.2d31fe4d.js.map",
+    "main.78150b76.js.map": "/brightMind/static/js/main.78150b76.js.map",
     "453.f484a740.chunk.js.map": "/brightMind/static/js/453.f484a740.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abd50b06.css",
-    "static/js/main.2d31fe4d.js"
+    "static/js/main.78150b76.js"
   ]
 }
